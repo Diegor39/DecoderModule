@@ -25,6 +25,12 @@ def decodes(code,advancekey):
 			index_list = list_alphabet.index(char_to_explore)
 			decode_index = index_list + int(advancekey)
 			decoded_string = decoded_string + list_alphabet[decode_index]
+			
+		elif char_to_explore.isdigit():
+
+			index_list = list_number.index(char_to_explore)
+			decode_index = index_list + int(advancekey)
+			decoded_string = decoded_string + list_number[decode_index]
 		
 		length_iterator = length_iterator + 1
 
