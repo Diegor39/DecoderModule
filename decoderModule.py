@@ -14,6 +14,9 @@ def decodes(code,advancekey):
 	
 	list_number = ["0", "1" , "2", "3", "4", "5", "6", "7", "8", "9"]
 	
+	indexal = list_alphabet.index("Z")+1
+	indexnu = list_number.index("9")+1
+	
 	print ("original chain: " + code)
 	
 	while length_iterator < len(code_upper):
@@ -21,16 +24,24 @@ def decodes(code,advancekey):
 		char_to_explore = decoded_list[length_iterator]
 
 		if char_to_explore.isalpha():
-
 			index_list = list_alphabet.index(char_to_explore)
-			decode_index = index_list + int(advancekey)
-			decoded_string = decoded_string + list_alphabet[decode_index]
+			if index_list == list_alphabet.index("Z") and advancekey == "1":
+			    decoded_string = decoded_string + list_alphabet[0]
+			else:
+			    decode_index = index_list + int(advancekey)
+			    while indexal<decode_index:
+			        decode_index = decode_index - indexal
+			    decoded_string = decoded_string + list_alphabet[decode_index]
 			
 		elif char_to_explore.isdigit():
-
 			index_list = list_number.index(char_to_explore)
-			decode_index = index_list + int(advancekey)
-			decoded_string = decoded_string + list_number[decode_index]
+			if index_list == list_number.index("9") and advancekey == "1":
+			    decoded_string = decoded_string + list_number[0]
+			else:
+			    decode_index = index_list + int(advancekey)
+			    while indexnu<decode_index:
+			        decode_index = decode_index - indexnu
+			    decoded_string = decoded_string + list_number[decode_index]
 		
 		length_iterator = length_iterator + 1
 
