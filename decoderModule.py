@@ -7,7 +7,7 @@ def decodes(code,advancekey):
 	length_iterator = 0 
 	decoded_string = ""
 	code_upper = code.upper()
-	decoded_list = split(code)
+	decoded_list = split(code_upper)
 
 	list_alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
 	"J", "K","L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
